@@ -31,3 +31,16 @@ for(let i in maxSpeed)
     storeDataMaxSpeed.push(i,maxSpeed[i]);
 }
 storeDataMaxSpeed.sort((a,b)=>{a-b});
+//object data 
+console.log('------------------')
+const price = [
+    {
+        id:1,
+        name:'All',
+        price:['699','799','899','999'],
+    }
+]
+let res = price.map((items,index)=>{
+    return items.price;
+})
+console.log(res);
