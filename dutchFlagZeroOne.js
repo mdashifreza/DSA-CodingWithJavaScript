@@ -1,15 +1,16 @@
 function dutchFlagZeroOne(arr){
     let len = arr.length;
-    let ptr = 0, itr = 0;
-    for(itr=0; itr<len; itr++)
+    let ptr = -1, itr = 0;
+    while( itr<len )
     {
         if(arr[itr] === 0)
-        {
-            [arr[itr],arr[ptr]] = [arr[ptr],arr[itr]];
+        {   
             ptr++;
+            [arr[itr],arr[ptr]] = [arr[ptr],arr[itr]];
         }
+        itr++;
     }
     return arr;
 }
-let result = dutchFlagZeroOne([0,0,1,0,0,1,1,1,0,]);
+let result = dutchFlagZeroOne([0,1,0,1,0,1]);
 console.log(result);
