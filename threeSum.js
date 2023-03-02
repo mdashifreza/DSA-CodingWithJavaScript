@@ -32,5 +32,5 @@ var threeSum = function(arr, target) {
     }
     return ans;
 }
-let result = threeSum([2,2,2,3,3,3,17,17,17,18,18,18], 37)
+let result = threeSum([2,2,2,3,3,3,17,17,17,18,18,18,18], 37)
 console.log(result);
