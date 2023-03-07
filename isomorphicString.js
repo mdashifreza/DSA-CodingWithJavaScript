@@ -25,7 +25,3 @@ var isomorphicString = function(s,t){
     return true;
 }
 console.log(isomorphicString('foo','adj'));
-let a = 'a';
-let b = 'a';
-console.log( 0 != a);
-console.log( 0 != b);
