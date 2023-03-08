@@ -6,8 +6,7 @@ var pi = function(sn,en){
     console.log(sn);
     pi(sn+1,en);
 }
-pi(1,10);
-console.log('-----------------------------')
+pi(1,10);console.log('-----------------------------')
 var pd = function(sn,en){
     if( sn > en )
     {
@@ -16,11 +15,11 @@ var pd = function(sn,en){
     pd(sn+1,en);
     console.log(sn);
 }
-pd(1,10);
-//power of 2 
+pd(1,10);console.log('-----------------------------')
+//power of 2::--- O(n)
 var powerOfTwo = function(a,b){
     if( b == 0 ) return 1;
     let ans = powerOfTwo(a,b-1);
-    return ans * a;
+    return ans * a ;
 }
-console.log(powerOfTwo(2,5))
+console.log(powerOfTwo(2,6))
