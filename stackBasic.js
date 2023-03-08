@@ -19,7 +19,21 @@ pd(1,10);console.log('-----------------------------')
 //power of 2::--- O(n)
 var powerOfTwo = function(a,b){
     if( b == 0 ) return 1;
-    let ans = powerOfTwo(a,b-1);
-    return ans * a ;
+    let ans = powerOfTwo(a,Math.floor(b/2));
+    ans *= ans; 
+    return b%2 === 0 ? ans : ans * a;  
 }
-console.log(powerOfTwo(2,6))
+console.log(powerOfTwo(2,5));
+//leetcode check power of two problem
+var powerOfTwo = function(n){
+    if( n <= 0 ) return false;
+    if( n == 1 ) return true;
+    let  ans = n & (n-1);
+    if( ans === 0 )
+    {
+        return true;
+    } 
+    return false;
+}
+console.log(powerOfTwo(4));
+console.log(powerOfTwo(3))
