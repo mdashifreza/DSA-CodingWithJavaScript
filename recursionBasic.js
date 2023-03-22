@@ -6,7 +6,29 @@ var recursionBasic = function(num){
     return num + recursionBasic(num-1);
 }
 console.log(recursionBasic(5));
-
+//
+var myPow = function(x, n) {
+    var helper = function(x,n){
+        if(x === 0){
+            return 0;
+        }
+        if(n === 0){
+            return 1;
+        }
+        let res = helper(x,Math.floor(n/2));
+        res = res * res;
+        return n % 2 === 0 ? res : x * res;
+    }
+let res = helper(x,Math.abs(n));
+    if(n > 0){
+        return res;
+    }
+    else{
+        return 1/res;
+    }
+};
+console.log(myPow(2,4))
+//
 var collectOddNum = function(oddArr){
     let result = [];
     var helper = function(oddArr){
