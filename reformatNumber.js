@@ -7,15 +7,18 @@ var reformatNumber = function(number) {
         }
     }
     let res = "";
-    console.log(str);
-    while(str.length >= 4){
-        str.length == 4 ?
-            res += str.substring(0,2) + "-" + str.substring(2)
-            :
-            res += str.substring(0,3) + "-";
+    while (str.length > 0) {
+        if (str.length <= 3) {
+            res += str;
+            break;
+        } else if (str.length == 4) {
+            res += str.substring(0, 2) + '-' + str.substring(2);
+            break;
+        } else {
+            res += str.substring(0, 3) + '-';
+        }
     str = str.substring(3);
     }
-return res;
+    return res;
 };
-
-reformatNumber("123 4-567");
+console.log(reformatNumber("123 4-567"));
