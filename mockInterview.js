@@ -1,27 +1,25 @@
 var mirror = function(n){
-    let rev = "";
-    let num = n;
-    while(num != 0){
-        let rem = num%10; 
-        if(rem === 2 || rem === 3 || rem === 5 || rem === 7 || rem === 4){
+    let readable = ["0","1","8","6","9"];
+    let rev = n.toString();
+    rev = rev.split("").reverse().join("");
+    for(let i=0; i<rev.length; i++){
+        if(!readable.includes(rev[i])){
             return false;
         }
-        rev += rem; 
-        num = Math.floor(num/10);
     }
-    let rev2 = rev.split(""); 
-    for(let i=0; i<rev2.length; i++){
-        if(rev2[i] === "9"){
-            rev2[i] = "6";
-        }
-        else if(rev2[i] === "6"){
-            rev2[i] = "9";
-        }
+    rev = rev.split("")//converting string to arr
+    for(let i=0; i<rev.length; i++){
+            if(rev[i] == "9"){
+                rev[i] = "6";
+            }
+            else if(rev[i] == "6"){
+                rev[i] = "9";
+            }
     }
-    rev2 = rev2.join("");
-    if(parseInt(rev2) !== n){
+    rev = rev.join("");
+    if(rev != n){
         return false;
     }
 return true;
 }
-console.log(mirror(191))
+console.log(mirror(69))
